@@ -17,14 +17,18 @@ public class CowGymnastics {
                 scores[i][j] = readInt();
             }
         }
-
-        int ans = 0;
-        for(int i = 1; i <= sessions; i++){
-            for (int j = 1; j <= sessions; j++)
-            {
-                int count = 0;
-                for(int s = 0; s < cow; s++){
-                    
+        for(int id = 1; id <= cow; id++){
+            for(int comp = 1; comp <= cow; comp++){
+                if(id == comp){
+                    continue;
+                }
+                boolean flag = true;
+                for(int i = 0; i < sessions; i++){
+                    for(int j = 0; j < cow; j++){
+                        if(scores[i][j] == id){
+                            flag = false;
+                        }
+                    }
                 }
             }
         }
